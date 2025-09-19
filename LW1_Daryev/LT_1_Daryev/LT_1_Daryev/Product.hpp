@@ -1,5 +1,6 @@
 #pragma once
-
+#ifndef PRODUCT_HPP
+#define PRODUCT_HPP
 #include <string>
 
 
@@ -32,9 +33,6 @@ public:
 	void Show(); // Show info from object
 	void ShowTab(); // Show info from object in table
 	static void ShowCap(); // Show cap in table
-	
-
-
-
 };
 
+#endif //PRODUCT_HPP
