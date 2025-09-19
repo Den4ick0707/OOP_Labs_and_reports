@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{2936bcfe-a096-4851-b0d3-fcea102e718c}</ProjectGuid>
-    <RootNamespace>Lab12Daryev</RootNamespace>
+    <ProjectGuid>{e332865d-8b98-45b0-8b70-708efe13e7c2}</ProjectGuid>
+    <RootNamespace>LT1Daryev</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -123,11 +123,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Lab_1_2_Daryev.cpp" />
-    <ClCompile Include="Money.cpp" />
+    <ClCompile Include="LT_1_Daryev.cpp" />
+    <ClCompile Include="Product.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Money.h" />
+    <ClInclude Include="Product.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
