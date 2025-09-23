@@ -38,15 +38,12 @@ int main()
 			 Product("","010101",200)
 		};
 		std::cout << "----------------------------------------------------------------" << std::endl;
+
 		Product::ShowCap();
 		for (int i = 0; i < SIZE; i++) {
 			ptrProdArr[i].ShowTab();
 
 		}
-
-
-
 	}
-
 }
 
