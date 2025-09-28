@@ -81,20 +81,16 @@ void Money::setCount(unsigned long count)
 
  bool Money::isValid(Money other) 
 {
-	if (Money::isValid(other.faceValue_, other.count_)) {
-		return true;
-	}
-	return false;
+	return Money::isValid(other.faceValue_, other.count_);
 }
 
  bool Money::isValid(unsigned int faceValue, unsigned long count) 
 {
-	int array[] = { 1,2,5,10,20,50,100,200,500,1000 };
 	if (count < 0)
 		return false;
 
 	for (int i = 0; i < 10; i++)
-		if (faceValue == array[i])
+		if (faceValue == _array[i])
 			return true;
 
 	return false;
