@@ -1,4 +1,4 @@
-namespace Lab_WinForm_Daryev
+namespace LW_WinForm_OOP_Daryev
 {
     internal static class Program
     {

@@ -59,10 +59,7 @@ void Motorcycle::setCapacity(unsigned int capacity)
 void Motorcycle::ShowInfo() const
 {
 	std::cout << "Motorcycle Info: " << std::endl;
-	std::cout << "Marks: " << _marks << std::endl;
-	std::cout << "Number: " << _number << std::endl;
-	std::cout << "Speed: " << _speed << std::endl;
-	std::cout << "Capacity: " << _capacity << std::endl;
+	Vehicle::ShowInfo();
 	std::cout << "Has Sidecar: " << (_hasSidecar ? "Yes" : "No") << std::endl;
 }
 
@@ -73,6 +70,6 @@ void Motorcycle::ShowInfoInTable() const
 		<< std::setw(15) << _number
 		<< std::setw(15) << _speed
 		<< std::setw(15) << _capacity
-		<< std::setw(15) << (_hasSidecar ? "Sidecar" : "NoSidecar") << std::endl;
+		<< std::setw(15) << (_hasSidecar ? "Sidecar" : "none") << std::endl;
 	std::cout << std::right;
 }

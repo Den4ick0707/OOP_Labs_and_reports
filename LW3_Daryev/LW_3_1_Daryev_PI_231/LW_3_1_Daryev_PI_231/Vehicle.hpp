@@ -32,7 +32,7 @@ public:
 
 	// -------------------------- Other Methods -----------------------------
 
-	virtual void ShowInfo() const = 0;	
+	virtual void ShowInfo() const;	
 	virtual void ShowInfoInTable() const = 0;
 
 };

@@ -93,3 +93,9 @@ void Vehicle::setCapacity(unsigned int capacity)
 	}
 	else _capacity = 0;
 }
+void Vehicle::ShowInfo()const { 
+	std::cout << "Marks: " << _marks << std::endl;
+	std::cout << "Number: " << _number << std::endl;
+	std::cout << "Speed: " << _speed << std::endl;
+	std::cout << "Capacity: " << _capacity << std::endl;
+}

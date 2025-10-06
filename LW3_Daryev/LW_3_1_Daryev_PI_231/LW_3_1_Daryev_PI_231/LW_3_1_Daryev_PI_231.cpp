@@ -17,11 +17,11 @@ int main() {
 	base.push_back(new Truck("Volvo", 11284, 120, 3000, true));
 	base.push_back(new Truck("MAN", 34674, 110, 4000, false));
 
-	std::cout << "============= Vehicle database =================\n\n";
+	std::cout << "========================================  Vehicle database ========================================\n\n";
 	for (auto t : base) {
 		t->ShowInfoInTable();
 	}
-	std::cout << "================================================\n\n";
+	std::cout << "===================================================================================================\n\n";
 	double required;
 	std::cout << "\nEnter minimal capacity to search: ";
 	std::cin >> required;

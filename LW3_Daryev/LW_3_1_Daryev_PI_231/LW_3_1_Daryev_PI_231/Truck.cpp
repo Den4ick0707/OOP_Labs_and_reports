@@ -57,10 +57,7 @@ void Truck::setCapacity(unsigned int capacity)
 void Truck::ShowInfo() const
 {
 	std::cout << "Truck Info: " << std::endl;
-	std::cout << "Marks: " << _marks << std::endl;
-	std::cout << "Number: " << _number << std::endl;
-	std::cout << "Speed: " << _speed << std::endl;
-	std::cout << "Capacity: " << _capacity << std::endl;
+	Vehicle::ShowInfo();
 	std::cout << "Has Trailer: " << (_hasTrailer ? "Yes" : "No") << std::endl;
 }
 
@@ -71,6 +68,6 @@ void Truck::ShowInfoInTable() const
 		<< std::setw(15) << _number
 		<< std::setw(15) << _speed
 		<< std::setw(15) << _capacity
-		<< std::setw(15) << (_hasTrailer ? "Trailer" : "NoTrailer") << std::endl;
+		<< std::setw(15) << (_hasTrailer ? "Trailer" : "none") << std::endl;
 	std::cout << std::right;
 }

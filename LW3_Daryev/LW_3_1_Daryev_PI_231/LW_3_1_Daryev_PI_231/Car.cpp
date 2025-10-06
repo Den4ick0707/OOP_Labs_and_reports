@@ -38,10 +38,7 @@ void Car::setSpeed(unsigned int speed)
 void Car::ShowInfo() const
 {
 	std::cout << "Car Info: " << std::endl;
-	std::cout << "Marks: " << _marks << std::endl;
-	std::cout << "Number: " << _number << std::endl;
-	std::cout << "Speed: " << _speed << std::endl;
-	std::cout << "Capacity: " << _capacity << std::endl;
+	Vehicle::ShowInfo();
 }
 
 void Car::ShowInfoInTable() const
