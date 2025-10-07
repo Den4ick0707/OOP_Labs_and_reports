@@ -8,6 +8,8 @@ namespace LW_WinForm_OOP_Daryev
 {
     public abstract class Figure
     {
+        protected Point startPoint;
+        protected Point endPoint;
         public abstract void DrawFigure(Bitmap bmp);
     }
 }

@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace LW_WinForm_OOP_Daryev
 {
-     public class MyLine : Figure
+    public class MyLine : Figure
     {
-        private Point startPoint;
-        private Point endPoint;
-
         public MyLine(Point s, Point e)
         {
             startPoint = s;

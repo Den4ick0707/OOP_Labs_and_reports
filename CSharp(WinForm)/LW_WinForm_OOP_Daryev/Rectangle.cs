@@ -10,15 +10,11 @@ namespace LW_WinForm_OOP_Daryev
 {
     public class MyRectangle : Figure
     {
-        private Point startPoint;
-        private Point endPoint;
-
         public MyRectangle(Point s, Point e)
         {
             startPoint = s;
             endPoint = e;
         }
-
         public override void DrawFigure(Bitmap bmp)
         {
             using (Graphics g = Graphics.FromImage(bmp))

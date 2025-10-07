@@ -10,7 +10,7 @@ namespace LW_WinForm_OOP_Daryev
     }
     public partial class MainForm : Form
     {
-        public static Bitmap mainBMP;
+        public Bitmap mainBMP;
         private DrawMode dm;
         private Point startPoint;
         private Point endPoint;
@@ -20,13 +20,12 @@ namespace LW_WinForm_OOP_Daryev
         {
             InitializeComponent();
 
-            
             mainPicture.Size = NormaliseMachine.DenormaliseSize(mainPicture, this, new SizeF(0.8f, 0.9f));
             mainPicture.Location = NormaliseMachine.DenormalisePoint(mainPicture, this, new PointF(0.05f, 0.05f));
 
+
             dm = DrawMode.None;
             mainBMP = new Bitmap(mainPicture.Width, mainPicture.Height);
-
             mainPicture.Image = mainBMP;
         }
 
@@ -37,7 +36,6 @@ namespace LW_WinForm_OOP_Daryev
             mainBMP = new Bitmap(mainPicture.Width, mainPicture.Height);
             mainPicture.Image = mainBMP;
         }
-
         private void mainPicture_MouseDown(object sender, MouseEventArgs e)
         {
             if (dm == DrawMode.None) return;
@@ -51,7 +49,7 @@ namespace LW_WinForm_OOP_Daryev
         {
             if (!isDrawing) return;
             endPoint = e.Location;
-            mainPicture.Refresh(); 
+            mainPicture.Refresh();
         }
 
         private void mainPicture_MouseUp(object sender, MouseEventArgs e)
@@ -83,10 +81,10 @@ namespace LW_WinForm_OOP_Daryev
             switch (dm)
             {
                 case DrawMode.Line:
-                    e.Graphics.DrawLine(Pens.Red, startPoint, endPoint);
+                    e.Graphics.DrawLine(Pens.Black, startPoint, endPoint);
                     break;
                 case DrawMode.Rectangle:
-                    e.Graphics.DrawRectangle(Pens.Red,
+                    e.Graphics.DrawRectangle(Pens.Black,
                         Math.Min(startPoint.X, endPoint.X),
                         Math.Min(startPoint.Y, endPoint.Y),
                         Math.Abs(endPoint.X - startPoint.X),
