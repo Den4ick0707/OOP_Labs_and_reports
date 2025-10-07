@@ -63,6 +63,5 @@ namespace LW_Draw
             int denormHeight = (int)(sizeF.Height * form.ClientSize.Height);
             return new Size(denormWidth, denormHeight);
         }
-
     }
 }

@@ -38,9 +38,14 @@ namespace LW_WinForm_OOP_Daryev
             windowStripMenuIt = new ToolStripMenuItem();
             infoStripMenuIt = new ToolStripMenuItem();
             toolStrip1 = new ToolStrip();
-            RectangleTool = new ToolStripButton();
-            toolStripButton2 = new ToolStripButton();
+            LineDrawTool = new ToolStripButton();
+            RectangleDrawTool = new ToolStripButton();
+            ElipseDrawTool = new ToolStripButton();
+            CircleDrawTool = new ToolStripButton();
             mainPicture = new PictureBox();
+            toolStripTextBox1 = new ToolStripTextBox();
+            toolStripTextBox2 = new ToolStripTextBox();
+            toolStripTextBox3 = new ToolStripTextBox();
             systemMenuStrip.SuspendLayout();
             toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)mainPicture).BeginInit();
@@ -66,21 +71,24 @@ namespace LW_WinForm_OOP_Daryev
             // 
             openToolStripMenuItem.Name = "openToolStripMenuItem";
             openToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.O;
-            openToolStripMenuItem.Size = new Size(146, 22);
+            openToolStripMenuItem.Size = new Size(180, 22);
             openToolStripMenuItem.Text = "Open";
+            openToolStripMenuItem.Click += openToolStripMenuItem_Click;
             // 
             // saveToolStripMenuItem
             // 
             saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             saveToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.S;
-            saveToolStripMenuItem.Size = new Size(146, 22);
+            saveToolStripMenuItem.Size = new Size(180, 22);
             saveToolStripMenuItem.Text = "Save";
+            saveToolStripMenuItem.Click += saveToolStripMenuItem_Click;
             // 
             // saveAsToolStripMenuItem
             // 
             saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            saveAsToolStripMenuItem.Size = new Size(146, 22);
+            saveAsToolStripMenuItem.Size = new Size(180, 22);
             saveAsToolStripMenuItem.Text = "Save as";
+            saveAsToolStripMenuItem.Click += saveAsToolStripMenuItem_Click;
             // 
             // windowStripMenuIt
             // 
@@ -90,6 +98,7 @@ namespace LW_WinForm_OOP_Daryev
             // 
             // infoStripMenuIt
             // 
+            infoStripMenuIt.DropDownItems.AddRange(new ToolStripItem[] { toolStripTextBox1, toolStripTextBox2, toolStripTextBox3 });
             infoStripMenuIt.Name = "infoStripMenuIt";
             infoStripMenuIt.Size = new Size(40, 20);
             infoStripMenuIt.Text = "Info";
@@ -99,7 +108,7 @@ namespace LW_WinForm_OOP_Daryev
             toolStrip1.BackColor = Color.FromArgb(180, 222, 189);
             toolStrip1.Dock = DockStyle.Left;
             toolStrip1.GripStyle = ToolStripGripStyle.Hidden;
-            toolStrip1.Items.AddRange(new ToolStripItem[] { RectangleTool, toolStripButton2 });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { LineDrawTool, RectangleDrawTool, ElipseDrawTool, CircleDrawTool });
             toolStrip1.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
             toolStrip1.Location = new Point(0, 24);
             toolStrip1.Name = "toolStrip1";
@@ -107,27 +116,45 @@ namespace LW_WinForm_OOP_Daryev
             toolStrip1.TabIndex = 1;
             toolStrip1.Text = "toolStrip1";
             // 
-            // RectangleTool
+            // LineDrawTool
             // 
-            RectangleTool.Checked = true;
-            RectangleTool.CheckState = CheckState.Checked;
-            RectangleTool.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            RectangleTool.Image = (Image)resources.GetObject("RectangleTool.Image");
-            RectangleTool.ImageTransparentColor = Color.Magenta;
-            RectangleTool.Name = "RectangleTool";
-            RectangleTool.Size = new Size(61, 19);
-            RectangleTool.Text = "Rectangle";
-            RectangleTool.Click += RectangleTool_Click;
+            LineDrawTool.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            LineDrawTool.Image = (Image)resources.GetObject("LineDrawTool.Image");
+            LineDrawTool.ImageTransparentColor = Color.Magenta;
+            LineDrawTool.Name = "LineDrawTool";
+            LineDrawTool.Size = new Size(61, 19);
+            LineDrawTool.Text = "Line";
+            LineDrawTool.Click += toolStripButton2_Click;
             // 
-            // toolStripButton2
+            // RectangleDrawTool
             // 
-            toolStripButton2.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            toolStripButton2.Image = (Image)resources.GetObject("toolStripButton2.Image");
-            toolStripButton2.ImageTransparentColor = Color.Magenta;
-            toolStripButton2.Name = "toolStripButton2";
-            toolStripButton2.Size = new Size(61, 19);
-            toolStripButton2.Text = "Line";
-            toolStripButton2.Click += toolStripButton2_Click;
+            RectangleDrawTool.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            RectangleDrawTool.Image = (Image)resources.GetObject("RectangleDrawTool.Image");
+            RectangleDrawTool.ImageTransparentColor = Color.Magenta;
+            RectangleDrawTool.Name = "RectangleDrawTool";
+            RectangleDrawTool.Size = new Size(61, 19);
+            RectangleDrawTool.Text = "Rectangle";
+            RectangleDrawTool.Click += RectangleTool_Click;
+            // 
+            // ElipseDrawTool
+            // 
+            ElipseDrawTool.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            ElipseDrawTool.Image = (Image)resources.GetObject("ElipseDrawTool.Image");
+            ElipseDrawTool.ImageTransparentColor = Color.Magenta;
+            ElipseDrawTool.Name = "ElipseDrawTool";
+            ElipseDrawTool.Size = new Size(61, 19);
+            ElipseDrawTool.Text = "Elipse";
+            ElipseDrawTool.Click += toolStripButton1_Click;
+            // 
+            // CircleDrawTool
+            // 
+            CircleDrawTool.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            CircleDrawTool.Image = (Image)resources.GetObject("CircleDrawTool.Image");
+            CircleDrawTool.ImageTransparentColor = Color.Magenta;
+            CircleDrawTool.Name = "CircleDrawTool";
+            CircleDrawTool.Size = new Size(61, 19);
+            CircleDrawTool.Text = "Circle";
+            CircleDrawTool.Click += CircleDrawTool_Click;
             // 
             // mainPicture
             // 
@@ -142,6 +169,30 @@ namespace LW_WinForm_OOP_Daryev
             mainPicture.MouseDown += mainPicture_MouseDown;
             mainPicture.MouseMove += mainPicture_MouseMove;
             mainPicture.MouseUp += mainPicture_MouseUp;
+            // 
+            // toolStripTextBox1
+            // 
+            toolStripTextBox1.Font = new Font("Segoe UI", 12F);
+            toolStripTextBox1.Name = "toolStripTextBox1";
+            toolStripTextBox1.ReadOnly = true;
+            toolStripTextBox1.Size = new Size(200, 29);
+            toolStripTextBox1.Text = "Programmer:";
+            // 
+            // toolStripTextBox2
+            // 
+            toolStripTextBox2.Font = new Font("Segoe UI", 12F);
+            toolStripTextBox2.Name = "toolStripTextBox2";
+            toolStripTextBox2.ReadOnly = true;
+            toolStripTextBox2.Size = new Size(200, 29);
+            toolStripTextBox2.Text = "Student group PI-231";
+            // 
+            // toolStripTextBox3
+            // 
+            toolStripTextBox3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            toolStripTextBox3.Name = "toolStripTextBox3";
+            toolStripTextBox3.ReadOnly = true;
+            toolStripTextBox3.Size = new Size(200, 29);
+            toolStripTextBox3.Text = "Daryev Daniil";
             // 
             // MainForm
             // 
@@ -176,8 +227,13 @@ namespace LW_WinForm_OOP_Daryev
         private ToolStripMenuItem saveAsToolStripMenuItem;
         private ToolStripMenuItem infoStripMenuIt;
         private ToolStrip toolStrip1;
-        private ToolStripButton RectangleTool;
-        private ToolStripButton toolStripButton2;
+        private ToolStripButton RectangleDrawTool;
+        private ToolStripButton LineDrawTool;
         private PictureBox mainPicture;
+        private ToolStripButton ElipseDrawTool;
+        private ToolStripButton CircleDrawTool;
+        private ToolStripTextBox toolStripTextBox1;
+        private ToolStripTextBox toolStripTextBox2;
+        private ToolStripTextBox toolStripTextBox3;
     }
 }
