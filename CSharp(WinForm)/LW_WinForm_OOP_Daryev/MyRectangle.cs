@@ -30,4 +30,8 @@ namespace LW_User_Draw
             }
         }
     }
+
+    public class LW_UserDraw_MyRectangle
+    {
+    }
 }

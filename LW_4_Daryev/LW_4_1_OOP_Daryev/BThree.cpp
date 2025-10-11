@@ -8,12 +8,12 @@ BThree::~BThree()
 {
 	std::cout << "BThree::~BThree() called" << std::endl;
 }
-void BThree::setChar(int number)
+void BThree::setChar(char symbol)
 {
-	_charSymbol = number;
+	_charSymbol = symbol;
 }
 
-int BThree::getChar()
+char BThree::getChar()
 {
 	return _charSymbol;
 }

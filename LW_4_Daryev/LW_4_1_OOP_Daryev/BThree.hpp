@@ -5,13 +5,13 @@
 class BThree
 {
 private:
-	int _charSymbol;
+	char _charSymbol;
 
 public:
 	BThree();
 	virtual ~BThree();
-	void setChar(int number);
-	int getChar();
+	void setChar(char symbol);
+	char getChar();
 
 	virtual void InputInitialise();
 	virtual void Show();
