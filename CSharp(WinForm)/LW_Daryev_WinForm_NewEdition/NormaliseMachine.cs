@@ -4,29 +4,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LW_Draw
+namespace LW_Daryev_WinForm_NewEdition.Nomalisation
 {
-    public static class NormaliseMachine
+    public static class NormaliseMashine
     {
-        public static Point DenormalisePoint(Control control, Form form, float x, float y)
+        /// <summary>
+        /// Function to denormalise a point from [0, 1] range to actual pixel coordinates based on the form's client size.
+        /// </summary>
+        /// <param name="form"></param>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        /// <exception cref="ArgumentOutOfRangeException"></exception>
+        public static Point DenormalisePoint(Form form, float x, float y)
         {
-            if (control == null)
-                throw new ArgumentNullException(nameof(control));
             if (form == null)
                 throw new ArgumentNullException(nameof(form));
 
             if (x < 0 || x > 1 || y < 0 || y > 1)
                 throw new ArgumentOutOfRangeException(nameof(x), "x and y must be in the range [0, 1]");
 
+
             int denormX = (int)(x * form.ClientSize.Width);
             int denormY = (int)(y * form.ClientSize.Height);
 
             return new Point(denormX, denormY);
         }
-        public static Point DenormalisePoint(Control control, Form form, PointF pointF)
+        public static Point DenormalisePoint(Form form, PointF pointF)
         {
-            if (control == null)
-                throw new ArgumentNullException(nameof(control));
             if (form == null)
                 throw new ArgumentNullException(nameof(form));
 
@@ -38,22 +44,20 @@ namespace LW_Draw
 
             return new Point(denormX, denormY);
         }
-        public static Size DenormaliseSize(Control control, Form form, float width, float height)
+        public static Size DenormaliseSize(Form form, float width, float height)
         {
-            if (control == null)
-                throw new ArgumentNullException(nameof(control));
             if (form == null)
                 throw new ArgumentNullException(nameof(form));
+
             if (width < 0 || width > 1 || height < 0 || height > 1)
                 throw new ArgumentOutOfRangeException(nameof(width), "width and height must be in the range [0, 1]");
+
             int denormWidth = (int)(width * form.ClientSize.Width);
             int denormHeight = (int)(height * form.ClientSize.Height);
             return new Size(denormWidth, denormHeight);
         }
-        public static Size DenormaliseSize(Control control, Form form, SizeF sizeF)
+        public static Size DenormaliseSize(Form form, SizeF sizeF)
         {
-            if (control == null)
-                throw new ArgumentNullException(nameof(control));
             if (form == null)
                 throw new ArgumentNullException(nameof(form));
             if (sizeF.Width < 0 || sizeF.Width > 1 || sizeF.Height < 0 || sizeF.Height > 1)

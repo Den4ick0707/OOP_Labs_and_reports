@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LW_WinForm_Daryev.Draw.Canvas">
+    <Position X="4.75" Y="0.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAABAAAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>Canvas.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LW_WinForm_Daryev.FileMahager.MyFileManager">
+    <Position X="8.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>MyFileManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LW_WinForm_Daryev.Normalisation.NormaliseMashine">
+    <Position X="10.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NormaliseMashine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="LW_WinForm_Daryev.Draw.IShapeDraw">
+    <Position X="7.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJAAAAACCAAA=</HashCode>
+      <FileName>IShapeDraw.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="LW_WinForm_Daryev.Draw.MyDrawMode">
+    <Position X="2" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAIAAAAAACQAAAAEAAAoAAAAAAAAAAAA=</HashCode>
+      <FileName>Canvas.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Drawing;
+using System.Windows.Forms;
 
-namespace LW_Draw
+namespace LW_WinForm_Daryev.Normalisation
 {
-    public static class NormaliseMachine
+    public static class NormaliseMashine
     {
         public static Point DenormalisePoint(Control control, Form form, float x, float y)
         {
-            if (control == null)
-                throw new ArgumentNullException(nameof(control));
             if (form == null)
                 throw new ArgumentNullException(nameof(form));
 
@@ -23,10 +19,9 @@ namespace LW_Draw
 
             return new Point(denormX, denormY);
         }
+
         public static Point DenormalisePoint(Control control, Form form, PointF pointF)
         {
-            if (control == null)
-                throw new ArgumentNullException(nameof(control));
             if (form == null)
                 throw new ArgumentNullException(nameof(form));
 
@@ -38,10 +33,9 @@ namespace LW_Draw
 
             return new Point(denormX, denormY);
         }
+
         public static Size DenormaliseSize(Control control, Form form, float width, float height)
         {
-            if (control == null)
-                throw new ArgumentNullException(nameof(control));
             if (form == null)
                 throw new ArgumentNullException(nameof(form));
             if (width < 0 || width > 1 || height < 0 || height > 1)
@@ -50,10 +44,9 @@ namespace LW_Draw
             int denormHeight = (int)(height * form.ClientSize.Height);
             return new Size(denormWidth, denormHeight);
         }
+
         public static Size DenormaliseSize(Control control, Form form, SizeF sizeF)
         {
-            if (control == null)
-                throw new ArgumentNullException(nameof(control));
             if (form == null)
                 throw new ArgumentNullException(nameof(form));
             if (sizeF.Width < 0 || sizeF.Width > 1 || sizeF.Height < 0 || sizeF.Height > 1)

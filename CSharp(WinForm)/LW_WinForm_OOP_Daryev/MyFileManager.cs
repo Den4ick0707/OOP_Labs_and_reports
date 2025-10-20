@@ -15,7 +15,7 @@ namespace LW_Files
             if (ofd.ShowDialog() == DialogResult.OK)
                 return new Bitmap(ofd.FileName);
 
-            return null;
+            return  null;
         }
         public static void SaveAsToFile(Bitmap bmp)
         {
