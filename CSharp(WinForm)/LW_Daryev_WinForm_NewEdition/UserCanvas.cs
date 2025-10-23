@@ -26,19 +26,18 @@ namespace LW_Daryev_WinForm_NewEdition.Draw
         public List<IBrushDraw> BrushList;
         public bool IsDrawing { get; set; }
         public MyDrawMode DrMode { get; set; }
-        public UserCanvas(Bitmap bmpSource)
+        public UserCanvas(Bitmap bmpSource,List<IBrushDraw> brushList)
         {
             CanvasSourse = bmpSource;
             ShapesList = new List<IShapeDraw>();
-            BrushList = new List<IBrushDraw>();
+            BrushList = brushList;
             IsDrawing = false;
             DrMode = MyDrawMode.NONE;
         }
-
         public void ClearCanvas()
         {
             ShapesList.Clear();
-            // BrushList.Clear();
+            BrushList.Clear();
             using (Graphics g = Graphics.FromImage(CanvasSourse))
             {
                 g.Clear(Color.White);
@@ -56,7 +55,7 @@ namespace LW_Daryev_WinForm_NewEdition.Draw
             }
 
         }
-        public void DrawPreviewShape(Graphics graphics)
+        public void DrawPreview(Graphics graphics)
         {
             foreach (var shape in ShapesList)
             {

@@ -52,10 +52,20 @@
             toolStripSeparator2 = new ToolStripSeparator();
             toolStripLabel2 = new ToolStripLabel();
             SizeToolStripComboBox = new ToolStripComboBox();
+            toolStripSeparator3 = new ToolStripSeparator();
+            toolStripLabel3 = new ToolStripLabel();
+            toolStripLabel4 = new ToolStripLabel();
+            toolStripLabel5 = new ToolStripLabel();
+            StatusStrip = new StatusStrip();
+            toolStripStatusLabel1 = new ToolStripStatusLabel();
+            StatusModeStripValue = new ToolStripStatusLabel();
+            toolStripStatusLabel2 = new ToolStripStatusLabel();
+            DrawingStatusShow = new ToolStripStatusLabel();
             menuBarStrip.SuspendLayout();
             toolsToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)mainPicture).BeginInit();
             propToolStrip.SuspendLayout();
+            StatusStrip.SuspendLayout();
             SuspendLayout();
             // 
             // menuBarStrip
@@ -213,7 +223,7 @@
             mainPicture.Cursor = Cursors.Cross;
             mainPicture.Location = new Point(124, 74);
             mainPicture.Name = "mainPicture";
-            mainPicture.Size = new Size(836, 477);
+            mainPicture.Size = new Size(836, 433);
             mainPicture.TabIndex = 2;
             mainPicture.TabStop = false;
             mainPicture.Paint += mainPicture_Paint;
@@ -225,7 +235,7 @@
             // 
             propToolStrip.AutoSize = false;
             propToolStrip.GripStyle = ToolStripGripStyle.Hidden;
-            propToolStrip.Items.AddRange(new ToolStripItem[] { toolStripLabel1, ColorInfoAndChangeToolStripButton, toolStripSeparator1, toolStripSeparator2, toolStripLabel2, SizeToolStripComboBox });
+            propToolStrip.Items.AddRange(new ToolStripItem[] { toolStripLabel1, ColorInfoAndChangeToolStripButton, toolStripSeparator1, toolStripSeparator2, toolStripLabel2, SizeToolStripComboBox, toolStripSeparator3, toolStripLabel3, toolStripLabel4, toolStripLabel5 });
             propToolStrip.Location = new Point(111, 24);
             propToolStrip.Name = "propToolStrip";
             propToolStrip.Size = new Size(861, 25);
@@ -272,12 +282,78 @@
             SizeToolStripComboBox.Size = new Size(121, 25);
             SizeToolStripComboBox.ToolTipText = "Change draw size";
             // 
+            // toolStripSeparator3
+            // 
+            toolStripSeparator3.Name = "toolStripSeparator3";
+            toolStripSeparator3.Size = new Size(6, 25);
+            // 
+            // toolStripLabel3
+            // 
+            toolStripLabel3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            toolStripLabel3.Name = "toolStripLabel3";
+            toolStripLabel3.Size = new Size(48, 22);
+            toolStripLabel3.Text = "Undo";
+            toolStripLabel3.Click += toolStripLabel3_Click;
+            // 
+            // toolStripLabel4
+            // 
+            toolStripLabel4.Font = new Font("Nova Nerd Font", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            toolStripLabel4.Name = "toolStripLabel4";
+            toolStripLabel4.Size = new Size(39, 22);
+            toolStripLabel4.Text = "<=>";
+            // 
+            // toolStripLabel5
+            // 
+            toolStripLabel5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            toolStripLabel5.Name = "toolStripLabel5";
+            toolStripLabel5.Size = new Size(46, 22);
+            toolStripLabel5.Text = "Redo";
+            toolStripLabel5.Click += toolStripLabel5_Click;
+            // 
+            // StatusStrip
+            // 
+            StatusStrip.AutoSize = false;
+            StatusStrip.BackColor = Color.FromArgb(255, 255, 192);
+            StatusStrip.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1, StatusModeStripValue, toolStripStatusLabel2, DrawingStatusShow });
+            StatusStrip.Location = new Point(111, 528);
+            StatusStrip.Name = "StatusStrip";
+            StatusStrip.Size = new Size(861, 35);
+            StatusStrip.TabIndex = 4;
+            // 
+            // toolStripStatusLabel1
+            // 
+            toolStripStatusLabel1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            toolStripStatusLabel1.Size = new Size(120, 30);
+            toolStripStatusLabel1.Text = "Current mode: ";
+            // 
+            // StatusModeStripValue
+            // 
+            StatusModeStripValue.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            StatusModeStripValue.Name = "StatusModeStripValue";
+            StatusModeStripValue.Size = new Size(50, 30);
+            StatusModeStripValue.Text = "None";
+            // 
+            // toolStripStatusLabel2
+            // 
+            toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            toolStripStatusLabel2.Size = new Size(635, 30);
+            toolStripStatusLabel2.Spring = true;
+            toolStripStatusLabel2.Text = " ";
+            // 
+            // DrawingStatusShow
+            // 
+            DrawingStatusShow.Name = "DrawingStatusShow";
+            DrawingStatusShow.Size = new Size(10, 30);
+            DrawingStatusShow.Text = " ";
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(71, 151, 73);
             ClientSize = new Size(972, 563);
+            Controls.Add(StatusStrip);
             Controls.Add(propToolStrip);
             Controls.Add(mainPicture);
             Controls.Add(toolsToolStrip);
@@ -293,6 +369,8 @@
             ((System.ComponentModel.ISupportInitialize)mainPicture).EndInit();
             propToolStrip.ResumeLayout(false);
             propToolStrip.PerformLayout();
+            StatusStrip.ResumeLayout(false);
+            StatusStrip.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -321,5 +399,14 @@
         private ToolStripSeparator toolStripSeparator2;
         private ToolStripLabel toolStripLabel2;
         private ToolStripComboBox SizeToolStripComboBox;
+        private ToolStripSeparator toolStripSeparator3;
+        private ToolStripLabel toolStripLabel3;
+        private ToolStripLabel toolStripLabel4;
+        private ToolStripLabel toolStripLabel5;
+        private StatusStrip StatusStrip;
+        private ToolStripStatusLabel toolStripStatusLabel1;
+        private ToolStripStatusLabel StatusModeStripValue;
+        private ToolStripStatusLabel toolStripStatusLabel2;
+        private ToolStripStatusLabel DrawingStatusShow;
     }
 }
