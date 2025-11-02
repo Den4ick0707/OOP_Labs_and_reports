@@ -1,0 +1,5 @@
+Apple,A123,15
+Banana,B456,30
+Cocos,C555,25
+Orange,O789,20
+Yay,Y232,50
