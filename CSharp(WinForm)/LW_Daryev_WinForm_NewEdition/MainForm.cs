@@ -1,20 +1,24 @@
 using LW_Daryev_WinForm_NewEdition.Nomalisation;
-using LW_Daryev_WinForm_NewEdition.File;
 using LW_Daryev_WinForm_NewEdition.Draw;
 using LW_Daryev_WinForm_NewEdition.Shape;
 using LW_Daryev_WinForm_NewEdition.Brush;
 using LW_Daryev_WinForm_NewEdition.HisotyManagment;
 
+
 namespace LW_Daryev_WinForm_NewEdition
 {
     public delegate void AddShapeToListDelegate(IShapeDraw shape);
     public delegate void ShowDrModeOnStatusStripDelegate(string mode);
+    public delegate void ShowDrawingStatusOnStatusStrip(bool status);
+    
     public partial class MainForm : Form
     {
         HistoryManager HistoryOnMainForm = new HistoryManager();
         public UserCanvas CanvasOnMainForm;
         AddShapeToListDelegate AddShapeToList;
         public ShowDrModeOnStatusStripDelegate ShowDrModeOnStatusStrip;
+        public ShowDrawingStatusOnStatusStrip showDrawingStatusOnStatusStrip;
+
         public MainForm()
         {
             InitializeComponent();
@@ -25,6 +29,7 @@ namespace LW_Daryev_WinForm_NewEdition
             SizeToolStripComboBox.SelectedIndex = 4;
             AddShapeToList += (IShapeDraw obj) => { CanvasOnMainForm.ShapesList.Add(obj); };
             ShowDrModeOnStatusStrip += (string mode) => { StatusModeStripValue.Text = $"{mode}"; };
+            showDrawingStatusOnStatusStrip += (bool status) => { DrawingStatusShow.Text = status ? "drawing" : " "; };
         }
         public void InitializeControlsLS()
         {
@@ -39,8 +44,6 @@ namespace LW_Daryev_WinForm_NewEdition
 
             mainPicture.Location = NormaliseMashine.DenormalisePoint(this, 0.13f, 0.13f);
             mainPicture.Size = NormaliseMashine.DenormaliseSize(this, 0.85f, 0.85f);
-
-
         }
         public void SetControlsLS()
         {
@@ -51,7 +54,7 @@ namespace LW_Daryev_WinForm_NewEdition
         {
             if (CanvasOnMainForm.IsDrawing) return;
 
-
+            showDrawingStatusOnStatusStrip(true);
             CanvasOnMainForm.IsDrawing = true;
             float SizeValue;
             Color ColorValue = ColorInfoAndChangeToolStripButton.BackColor;
@@ -114,6 +117,8 @@ namespace LW_Daryev_WinForm_NewEdition
         private void mainPicture_MouseUp(object sender, MouseEventArgs e)
         {
             if (CanvasOnMainForm.DrMode == MyDrawMode.NONE) return;
+            showDrawingStatusOnStatusStrip(false);
+
             if (CanvasOnMainForm.IsDrawing)
             {
                 if (CanvasOnMainForm.DrMode == MyDrawMode.BRUSH)
